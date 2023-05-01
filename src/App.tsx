@@ -1,8 +1,6 @@
-import React from 'react';
-import './App.css';
+import './App.css'
+import React from 'react'
 
-function App() {
-  return <div>Hello develop branch</div>;
+export const App = () => {
+  return <div>Hello develop branch</div>
 }
-
-export default App;
