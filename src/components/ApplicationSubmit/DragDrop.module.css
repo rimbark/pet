@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+}
+.dropContainer {
+  width: 100%;
+  min-height: 250px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.dragContainer {
+  padding: 8px;
+}
+
+.drag {
+  background: rgb(186, 67, 68, 0.5);
+}
+
+.drop {
+  background: rgb(94, 160, 196, 0.5);
+}

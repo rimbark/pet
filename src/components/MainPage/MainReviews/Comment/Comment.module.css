@@ -1,0 +1,17 @@
+.container {
+  position: relative;
+  padding: 70px 10px 15px 10px;
+  border-radius: 20px;
+  background-color: rgba(0,160,256,0.225)
+}
+
+.avatarissimo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: 35%;
+  display: flex;
+  justify-content: space-around;
+}

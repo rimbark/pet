@@ -1,0 +1,107 @@
+.outSideContainer {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 80%;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 0 10px 0;
+}
+
+.heart {
+  position: absolute;
+  top: 5%;
+  left: 1200px;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  left: 500px;
+  top: 0;
+  width: 500px;
+  height: 800px;
+  background: skyblue;
+  border-radius: 500px 500px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.heart:after {
+  position: absolute;
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+@media screen and (max-width: 1800px) {
+  .container {
+    min-width: 900px;
+  }
+
+  .heart {
+    left: 500px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .heart {
+    left: 300px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .heart {
+    left: 200px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .heart {
+    left: 100px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .heart {
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .container {
+    width: 80%;
+    min-width: 600px;
+  }
+
+  .outSideContainer {
+    background-color: skyblue;
+  }
+
+  .heart {
+    left: 100px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    min-width: 500px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .container {
+    min-width: 420px;
+  }
+}

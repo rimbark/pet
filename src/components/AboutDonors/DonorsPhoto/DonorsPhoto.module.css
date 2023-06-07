@@ -1,0 +1,22 @@
+.item {
+  position: relative;
+}
+.hiddenContent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background: linear-gradient(45deg, transparent , #ba4344 100%);
+  transition: all .5s;
+}
+
+.item:hover .hiddenContent {
+  opacity: 1;
+  transition: all .5s;
+}

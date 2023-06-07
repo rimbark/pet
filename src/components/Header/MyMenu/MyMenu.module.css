@@ -1,0 +1,87 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.menu {
+  position: relative;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.menu::after {
+  content: '';
+  width: 110%;
+  height: 3px;
+  background-color: #ba4344;
+  position: absolute;
+  top: 30px;
+  z-index: -1;
+  opacity: 0;
+}
+
+.menu.active::after {
+  opacity: .5;
+}
+
+.sandwich {
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
+  .menu {
+    display: none;
+  }
+
+  .sandwich {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.subItem1:hover, .subItem2:hover, .subItem3:hover, .subItem4:hover {
+  cursor: pointer;
+  color: #ba4344;
+  transition: all .5s;
+}
+
+.menuItem1, .menuItem2, .menuItem3 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.hiddenBlock1, .hiddenBlock2, .hiddenBlock3 {
+  position: absolute;
+  top: 25px;
+  width: 200px;
+  padding-top: 10px;
+  flex-direction: column;
+  gap: 5px;
+  display: none;
+}
+
+.hiddenBlock1::after, .hiddenBlock2::after, .hiddenBlock3::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: #ba4344;
+  position: absolute;
+  opacity: 1;
+  top: 5px;
+}
+
+.hiddenBlock1.active, .hiddenBlock2.active, .hiddenBlock3.active {
+  display: flex;
+}

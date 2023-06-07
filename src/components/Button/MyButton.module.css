@@ -1,0 +1,9 @@
+.container {
+  align-self: self-start;
+  width: 200px;
+  height: 40px;
+  background-color: lightskyblue;
+  border-radius: 19px;
+  font-weight: bolder;
+  color: white;
+}
