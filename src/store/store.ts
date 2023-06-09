@@ -1,4 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import applicationReducer from './reducers/Applications'
 import commentReducer from './reducers/CommentSlice'
 import donorsPhotoReducer from './reducers/DonorsPhotoSlice'
 import employeeReducer from './reducers/EmployeeInfoSlice'
@@ -9,6 +10,7 @@ export const rootReducer = combineReducers({
   employeeReducer,
   donorsPhotoReducer,
   registrationDataReducer,
+  applicationReducer,
 })
 
 export const setupStore = () => {

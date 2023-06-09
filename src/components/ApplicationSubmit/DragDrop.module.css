@@ -7,8 +7,10 @@
   height: auto;
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 .dragContainer {
+  border: 2px solid rebeccapurple;
   padding: 8px;
 }
 

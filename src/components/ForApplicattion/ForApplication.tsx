@@ -1,7 +1,11 @@
+import { Button } from '@chakra-ui/react'
 import React, { FC, useEffect } from 'react'
 import { DragDropContext, DropResult } from 'react-beautiful-dnd'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
-import { fetchDataForRegistration } from '../../store/reducers/ActionCreators'
+import {
+  fetchApplications,
+  fetchDataForRegistration,
+} from '../../store/reducers/ActionCreators'
 import { changeFields } from '../../store/reducers/RegistrationSlice'
 import { Drop } from '../ApplicationSubmit/Drop'
 import { ContactData } from './ContactData/ContactData'
@@ -37,6 +41,9 @@ export const ForApplication: FC = () => {
       dispatch(changeFields(changes))
     }
   }
+  const refreshFields = () => {
+    dispatch(fetchDataForRegistration())
+  }
 
   useEffect(() => {
     dispatch(fetchDataForRegistration())
@@ -58,8 +65,9 @@ export const ForApplication: FC = () => {
             )
           })}
         </div>
+        <Button onClick={refreshFields}>Refresh</Button>
       </DragDropContext>
-      <ContactData />
+      <ContactData tableData={dndColumns.fields.inputTable} />
     </>
   )
 }

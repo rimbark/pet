@@ -3,7 +3,7 @@ export interface ContentType {
   content: string
 }
 
-interface DataType {
+export interface DataType {
   [key: string]: ContentType
 }
 

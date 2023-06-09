@@ -1,5 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
+import { useAppSelector } from '../../hooks/redux'
+import { ApplicationType } from '../../models/ActionCreators.types'
 import { CommentType } from '../../models/CommentType'
 import { DonorsPhotoType } from '../../models/DonorsPhotoType.types'
 import { EmployeeType } from '../../models/EmployeeType.types'
@@ -94,6 +96,32 @@ export const fetchDataForRegistration = createAsyncThunk(
       return thunkAPI.rejectWithValue(
         'Не удалось подгрузить данные для подачи заявки'
       )
+    }
+  }
+)
+
+export const fetchApplications = createAsyncThunk(
+  'visitors/fetchApplications',
+  async (_, thunkAPI) => {
+    try {
+      const response = await axios.get<ApplicationType[]>(
+        'http://localhost:3001/applications'
+      )
+      return response.data
+    } catch {
+      return thunkAPI.rejectWithValue('Не удалось загрузить активные заявки')
+    }
+  }
+)
+export const sendApplication = createAsyncThunk(
+  'visitors/sendApplication',
+  async (application: ApplicationType, thunkAPI) => {
+    try {
+      const count = fetchApplications.fulfilled.length
+      application.id = count
+      await axios.post('http://localhost:3001/applications', application)
+    } catch {
+      return thunkAPI.rejectWithValue('Вы уже есть в списке')
     }
   }
 )
