@@ -104,7 +104,7 @@ export const MyMenu = () => {
               onClick={() => toGo(RouteNames.FOR_RECIPIENTS)}
               className={subItem4}
             >
-              РЕЦИПИЕНТАМ
+              СПИСОК ЗАЯВОК
             </div>
           </div>
         </div>

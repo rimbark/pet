@@ -2,10 +2,7 @@ import { Button } from '@chakra-ui/react'
 import React, { FC, useEffect } from 'react'
 import { DragDropContext, DropResult } from 'react-beautiful-dnd'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
-import {
-  fetchApplications,
-  fetchDataForRegistration,
-} from '../../store/reducers/ActionCreators'
+import { fetchDataForRegistration } from '../../store/reducers/ActionCreators'
 import { changeFields } from '../../store/reducers/RegistrationSlice'
 import { Drop } from '../ApplicationSubmit/Drop'
 import { ContactData } from './ContactData/ContactData'

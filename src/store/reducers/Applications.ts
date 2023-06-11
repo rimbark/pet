@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { ApplicationType } from '../../models/ActionCreators.types'
-import { fetchApplications } from './ActionCreators'
+import { fetchApplicationList } from './ActionCreators'
 
 interface InitialStateType {
   applications: ApplicationType[]
@@ -17,7 +17,7 @@ export const applicationSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(
-      fetchApplications.fulfilled,
+      fetchApplicationList.fulfilled,
       (state, action: PayloadAction<ApplicationType[]>) => {
         state.applications = action.payload
       }

@@ -12,12 +12,9 @@ import { FieldErrors, useForm } from 'react-hook-form'
 import validator from 'validator'
 import { z } from 'zod'
 import { useAppDispatch } from '../../../hooks/redux'
+import { FieldsContentType } from '../../../models/initialDndState.types'
 import {
-  DataType,
-  FieldsContentType,
-} from '../../../models/initialDndState.types'
-import {
-  fetchApplications,
+  fetchApplicationList,
   fetchDataForRegistration,
   sendApplication,
 } from '../../../store/reducers/ActionCreators'
@@ -61,7 +58,7 @@ export const ContactData = ({ tableData }: PropsType) => {
   const onSubmit = (data: typeof initialValues) => {
     console.log('data::::', data)
     reset(initialValues)
-    dispatch(fetchApplications())
+    dispatch(fetchApplicationList())
     dispatch(fetchDataForRegistration())
     const result = {
       id: 0,

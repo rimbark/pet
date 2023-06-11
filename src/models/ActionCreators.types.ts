@@ -1,8 +1,3 @@
-export interface FetchCommentsType {
-  viewStart: number
-  viewLimit: number
-}
-
 export interface ApplicationType {
   id: number
   patientData: {

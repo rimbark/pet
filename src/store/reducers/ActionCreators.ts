@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
-import { useAppSelector } from '../../hooks/redux'
 import { ApplicationType } from '../../models/ActionCreators.types'
 import { CommentType } from '../../models/CommentType'
 import { DonorsPhotoType } from '../../models/DonorsPhotoType.types'
@@ -100,7 +99,7 @@ export const fetchDataForRegistration = createAsyncThunk(
   }
 )
 
-export const fetchApplications = createAsyncThunk(
+export const fetchApplicationList = createAsyncThunk(
   'visitors/fetchApplications',
   async (_, thunkAPI) => {
     try {
@@ -117,7 +116,7 @@ export const sendApplication = createAsyncThunk(
   'visitors/sendApplication',
   async (application: ApplicationType, thunkAPI) => {
     try {
-      const count = fetchApplications.fulfilled.length
+      const count = fetchApplicationList.fulfilled.length
       application.id = count
       await axios.post('http://localhost:3001/applications', application)
     } catch {
